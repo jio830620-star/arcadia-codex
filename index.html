@@ -2,308 +2,97 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
-
-  <meta
-    name="description"
-    content="아르카디아 대륙의 세계관과 역사, 국가, 종족을 기록한 공식 설정집"
-  >
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090b10">
+  <meta name="description" content="아르카디아 대륙 공식 설정 아카이브">
   <title>ARCADIA CODEX</title>
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
-
 <body>
+  <div class="page-noise" aria-hidden="true"></div>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+  <canvas id="starCanvas" aria-hidden="true"></canvas>
 
-  <!-- 배경 장식 -->
-  <div class="background-glow background-glow-one"></div>
-  <div class="background-glow background-glow-two"></div>
-
-  <!-- 상단 메뉴 -->
-  <header class="site-header">
-    <a href="#home" class="logo">
-      <span class="logo-symbol">✦</span>
-      ARCADIA
+  <header class="site-header" id="siteHeader">
+    <a class="brand" href="#home" aria-label="홈으로 이동">
+      <span class="brand-mark">✦</span>
+      <span><strong>ARCADIA</strong><small>CODEX</small></span>
     </a>
-
-    <button
-      class="menu-button"
-      id="menuButton"
-      type="button"
-      aria-label="메뉴 열기"
-      aria-expanded="false"
-    >
-      <span></span>
-      <span></span>
-      <span></span>
+    <button class="menu-toggle" id="menuToggle" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="mainNav">
+      <span></span><span></span><span></span>
     </button>
-
-    <nav class="navigation" id="navigation">
-      <a href="#home">홈</a>
-      <a href="#world">세계관</a>
-      <a href="#nations">국가</a>
-      <a href="#power">능력 체계</a>
-      <a href="#records">기록 보관소</a>
+    <nav class="main-nav" id="mainNav" aria-label="주요 메뉴">
+      <a href="#home">홈</a><a href="#prologue">서문</a><a href="#world">세계관</a><a href="#nations">국가</a><a href="#archive">기록 보관소</a>
     </nav>
   </header>
 
   <main>
-
-    <!-- 메인 화면 -->
     <section class="hero" id="home">
-      <div class="hero-decoration"></div>
-
-      <div class="hero-content reveal">
-        <p class="eyebrow">THE OFFICIAL WORLD ARCHIVE</p>
-
-        <h1>
-          <span>ARCADIA</span>
-          <small>CODEX</small>
-        </h1>
-
-        <p class="hero-subtitle">
-          끝없는 선택이<br>
-          당신의 운명을 만든다.
-        </p>
-
-        <div class="hero-divider">
-          <span></span>
-          <b>✦</b>
-          <span></span>
-        </div>
-
-        <p class="hero-description">
-          검을 들어 전설의 기사가 될 수도,<br>
-          마법의 진리를 탐구하는 대마도사가 될 수도,<br>
-          신의 뜻을 전하는 성인이 될 수도 있습니다.
-        </p>
-
-        <p class="hero-question">
-          당신은 무엇이 되시겠습니까?
-        </p>
-
-        <a href="#world" class="primary-button">
-          세계에 입장하기
-          <span>↓</span>
-        </a>
+      <div class="hero-vignette" aria-hidden="true"></div>
+      <div class="hero-content reveal visible">
+        <p class="overline">THE OFFICIAL WORLD ARCHIVE</p>
+        <h1><span>ARCADIA</span><small>CODEX</small></h1>
+        <div class="ornament" aria-hidden="true"><i></i><b>✦</b><i></i></div>
+        <p class="hero-lead">끝없는 선택이<br>당신의 운명을 만든다.</p>
+        <p class="hero-copy">검을 들어 전설의 기사가 될 수도,<br>마법의 진리를 탐구하는 대마도사가 될 수도,<br>신의 뜻을 전하는 성인이 될 수도 있습니다.</p>
+        <p class="hero-question">당신은 무엇이 되시겠습니까?</p>
+        <a class="enter-button" href="#prologue"><span>ENTER THE WORLD</span><i>↓</i></a>
       </div>
-
-      <a href="#world" class="scroll-guide" aria-label="아래로 이동">
-        <span>SCROLL</span>
-        <i></i>
-      </a>
+      <a class="scroll-cue" href="#prologue" aria-label="다음 구역으로 이동"><span>SCROLL</span><i></i></a>
     </section>
 
-    <!-- 세계관 소개 -->
-    <section class="section world-section" id="world">
+    <section class="section prologue" id="prologue">
       <div class="section-heading reveal">
-        <p class="eyebrow">THE WORLD OF ARCADIA</p>
-        <h2>운명이 교차하는 대륙</h2>
-        <div class="title-line"></div>
+        <p class="overline">PROLOGUE</p><h2>당신의 이야기가 시작되는 곳</h2><span class="heading-line"></span>
       </div>
-
-      <div class="world-layout">
-        <article class="glass-card world-story reveal">
-          <span class="card-number">01</span>
-
-          <h3>아르카디아 대륙</h3>
-
-          <p>
-            아르카디아는 인간과 엘프, 드워프, 수인, 흡혈귀를 비롯한
-            수많은 종족이 살아가는 광대한 판타지 세계입니다.
-          </p>
-
-          <p>
-            마법사들은 마나를 다루며 써클을 쌓고, 기사와 무인들은
-            오러와 기, 투기를 단련하여 성의 경지에 오릅니다.
-            신을 섬기는 성직자들은 신성력을 통해 신위를 높여 갑니다.
-          </p>
-
-          <p>
-            평화와 전쟁, 신앙과 욕망, 명예와 야망이 끊임없이 충돌하는
-            이 땅에서 수많은 존재가 자신만의 역사를 만들어 갑니다.
-          </p>
+      <div class="prologue-grid">
+        <article class="prologue-story glass-panel reveal">
+          <span class="chapter-number">I</span>
+          <p>대륙의 중앙에는 가장 강대한 제국이, 서쪽에는 신앙의 교국이, 북쪽에는 전사들의 부족 연맹이 자리합니다. 동방의 청룡국에서는 무인들이 기를 갈고닦으며, 남쪽의 대해 상업연합은 수많은 항로와 황금함대로 바다를 지배합니다.</p>
+          <p>마법사들은 써클을 쌓고, 기사와 무인들은 성의 경지에 오르며, 성직자들은 신위를 높입니다. 모험가는 던전을 탐험하고, 마탑은 미지의 진리를 연구하며, 기사단은 각자의 국가와 신념을 수호합니다.</p>
         </article>
-
-        <div class="world-quote reveal">
+        <aside class="prologue-quote reveal">
           <span class="quote-mark">“</span>
-
-          <blockquote>
-            이 세계에는 정해진 주인공도,<br>
-            정해진 운명도 존재하지 않는다.
-          </blockquote>
-
-          <p>
-            모든 선택은 새로운 이야기가 되고,<br>
-            모든 발걸음은 역사의 일부가 됩니다.
-          </p>
-        </div>
+          <blockquote>이 세계에는 정해진 주인공도,<br>정해진 운명도 존재하지 않는다.</blockquote>
+          <p>누군가의 영웅이 될 수도,<br>누군가의 적이 될 수도 있습니다.</p>
+        </aside>
       </div>
     </section>
 
-    <!-- 국가 -->
-    <section class="section nations-section" id="nations">
-      <div class="section-heading reveal">
-        <p class="eyebrow">FIVE GREAT NATIONS</p>
-        <h2>대륙의 다섯 국가</h2>
-        <div class="title-line"></div>
-
-        <p class="section-introduction">
-          서로 다른 이상과 문화를 지닌 다섯 국가가
-          아르카디아의 질서를 이루고 있습니다.
-        </p>
+    <section class="section world" id="world">
+      <div class="section-heading reveal"><p class="overline">THE WORLD OF ARCADIA</p><h2>하나의 대륙, 수많은 운명</h2><span class="heading-line"></span></div>
+      <div class="world-cards">
+        <article class="feature-card reveal"><span class="feature-icon">✧</span><small>ARCANE</small><h3>마법</h3><p>마나를 다루며 1써클에서 9써클까지 진리에 다가가는 길.</p><strong>1—9 CIRCLE</strong></article>
+        <article class="feature-card reveal"><span class="feature-icon">⚔</span><small>MARTIAL</small><h3>무력</h3><p>오러·기·투기라는 이름으로 불리는 육체와 생명력의 힘.</p><strong>1—9 STAR</strong></article>
+        <article class="feature-card reveal"><span class="feature-icon">✦</span><small>DIVINE</small><h3>신성력</h3><p>신앙을 통해 신의 권능을 빌리고 신위를 높이는 길.</p><strong>1—9 DIVINE RANK</strong></article>
       </div>
+    </section>
 
+    <section class="section nations" id="nations">
+      <div class="section-heading reveal"><p class="overline">FIVE GREAT NATIONS</p><h2>대륙을 움직이는 다섯 국가</h2><span class="heading-line"></span></div>
       <div class="nation-grid">
-
-        <article class="nation-card reveal">
-          <div class="nation-icon">♛</div>
-          <p class="nation-direction">CENTRAL · 중앙</p>
-          <h3>제국</h3>
-          <span class="nation-english">THE EMPIRE</span>
-          <p>
-            황제가 통치하는 대륙 최대의 국가.
-            정치·군사·경제의 중심이자 가장 강대한 국력을 보유하고 있습니다.
-          </p>
-          <span class="nation-tag">황금 쌍독수리</span>
-        </article>
-
-        <article class="nation-card reveal">
-          <div class="nation-icon">✥</div>
-          <p class="nation-direction">WEST · 서쪽</p>
-          <h3>교국</h3>
-          <span class="nation-english">THE HOLY STATE</span>
-          <p>
-            교황과 성녀를 중심으로 운영되는 신앙 국가.
-            신성력과 종교, 정화와 치유의 중심지입니다.
-          </p>
-          <span class="nation-tag">신앙과 구원</span>
-        </article>
-
-        <article class="nation-card reveal">
-          <div class="nation-icon">❄</div>
-          <p class="nation-direction">NORTH · 북쪽</p>
-          <h3>북빙 부족 연맹</h3>
-          <span class="nation-english">THE FROZEN TRIBES</span>
-          <p>
-            여러 부족이 힘으로 결속한 전사들의 국가.
-            혈통보다 실력과 용맹, 명예를 가장 중요하게 여깁니다.
-          </p>
-          <span class="nation-tag">빙랑전단</span>
-        </article>
-
-        <article class="nation-card reveal">
-          <div class="nation-icon">龍</div>
-          <p class="nation-direction">EAST · 동쪽</p>
-          <h3>청룡국</h3>
-          <span class="nation-english">THE AZURE DRAGON</span>
-          <p>
-            검술과 무도가 극도로 발달한 동방 국가.
-            무인들은 기를 단련하며 무도의 극의를 추구합니다.
-          </p>
-          <span class="nation-tag">금룡위</span>
-        </article>
-
-        <article class="nation-card reveal">
-          <div class="nation-icon">⚓</div>
-          <p class="nation-direction">SOUTH · 남쪽</p>
-          <h3>대해 상업연합</h3>
-          <span class="nation-english">THE GRAND MARITIME UNION</span>
-          <p>
-            해양 도시와 거대 상회가 결성한 상업 연합.
-            대륙 최대의 무역망과 강력한 황금함대를 운용합니다.
-          </p>
-          <span class="nation-tag">황금함대</span>
-        </article>
-
+        <article class="nation-card reveal"><span class="nation-symbol">♛</span><small>CENTRAL</small><h3>제국</h3><p>황제가 통치하는 정치·군사·경제의 중심.</p></article>
+        <article class="nation-card reveal"><span class="nation-symbol">✥</span><small>WEST</small><h3>교국</h3><p>성녀와 교황을 중심으로 한 신앙과 신성력의 나라.</p></article>
+        <article class="nation-card reveal"><span class="nation-symbol">❄</span><small>NORTH</small><h3>북빙 부족 연맹</h3><p>혈통보다 힘과 명예를 중시하는 전사들의 연맹.</p></article>
+        <article class="nation-card reveal"><span class="nation-symbol">龍</span><small>EAST</small><h3>청룡국</h3><p>검술과 무도, 기의 수련이 발달한 동방 국가.</p></article>
+        <article class="nation-card reveal"><span class="nation-symbol">⚓</span><small>SOUTH</small><h3>대해 상업연합</h3><p>상회와 해양도시가 결성한 대륙 최대 무역 국가.</p></article>
       </div>
     </section>
 
-    <!-- 능력 체계 -->
-    <section class="section power-section" id="power">
-      <div class="section-heading reveal">
-        <p class="eyebrow">PATHS OF POWER</p>
-        <h2>세 가지 힘의 길</h2>
-        <div class="title-line"></div>
-      </div>
-
-      <div class="power-grid">
-
-        <article class="power-card reveal">
-          <span class="power-symbol">✧</span>
-          <p class="power-order">ARCANE</p>
-          <h3>마법</h3>
-          <p>
-            세계에 흐르는 마나를 통제하고 현상을 일으키는 힘.
-            마법사는 총 아홉 단계의 써클을 쌓습니다.
-          </p>
-          <strong>1~9 CIRCLE</strong>
-        </article>
-
-        <article class="power-card reveal">
-          <span class="power-symbol">⚔</span>
-          <p class="power-order">MARTIAL</p>
-          <h3>무력</h3>
-          <p>
-            육체와 생명력을 단련하여 발현하는 힘.
-            지역에 따라 오러, 기, 투기라는 이름으로 불립니다.
-          </p>
-          <strong>1~9 STAR</strong>
-        </article>
-
-        <article class="power-card reveal">
-          <span class="power-symbol">✦</span>
-          <p class="power-order">DIVINE</p>
-          <h3>신성력</h3>
-          <p>
-            신앙을 통해 신의 권능을 빌려 사용하는 힘.
-            성직자는 총 아홉 단계의 신위를 높여 갑니다.
-          </p>
-          <strong>1~9 DIVINE RANK</strong>
-        </article>
-
+    <section class="section archive" id="archive">
+      <div class="archive-panel reveal">
+        <p class="overline">THE GREAT ARCHIVE</p><h2>아르카디아의 모든 기록</h2>
+        <p>종족, 마탑, 모험가 길드, 몬스터, 던전, 마계, 황실, 정령, 드래곤과 대륙의 역사가 앞으로 이곳에 차례대로 기록됩니다.</p>
+        <div class="version"><span></span>ARCADIA CODEX · VERSION 0.1</div>
       </div>
     </section>
-
-    <!-- 기록 보관소 -->
-    <section class="section archive-section" id="records">
-      <div class="archive-box reveal">
-        <p class="eyebrow">THE GREAT ARCHIVE</p>
-
-        <h2>아르카디아의 모든 기록</h2>
-
-        <p>
-          종족, 마탑, 모험가 길드, 몬스터, 던전, 마계,
-          황실과 귀족, 정령과 드래곤, 그리고 대륙의 역사가
-          차례대로 이 기록 보관소에 추가됩니다.
-        </p>
-
-        <div class="archive-status">
-          <span class="status-light"></span>
-          CODEX ARCHIVE · VERSION 0.1
-        </div>
-      </div>
-    </section>
-
   </main>
 
-  <footer class="site-footer">
-    <a href="#home" class="footer-logo">ARCADIA CODEX</a>
-
-    <p>
-      끝없는 선택이 당신의 운명을 만든다.
-    </p>
-
-    <span>
-      © 2026 ARCADIA CODEX
-    </span>
-  </footer>
-
+  <footer><a href="#home">ARCADIA CODEX</a><p>끝없는 선택이 당신의 운명을 만든다.</p><small>© 2026 ARCADIA CODEX</small></footer>
 </body>
 </html>
